@@ -18,8 +18,6 @@ public class AIController : GameEntity {
         if(travelEndTime <= Time.time){
             randomVector = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
             travelEndTime = Time.time + Random.Range(minTravelTime, maxTravelTime);
-            Debug.Log(randomVector.x + "\t" + randomVector.z);
-            Debug.Log(travelEndTime);
         }
 
         movement = randomVector;
