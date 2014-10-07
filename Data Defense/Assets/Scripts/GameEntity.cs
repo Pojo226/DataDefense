@@ -14,7 +14,6 @@ public class GameEntity : MonoBehaviour {
         charController = GetComponent<CharacterController>();
 	}
 	
-	// Update is called once per frame
 	protected void Update(){
         movement.y = Physics.gravity.y;
         charController.Move(movement * maxSpeed * Time.deltaTime);
