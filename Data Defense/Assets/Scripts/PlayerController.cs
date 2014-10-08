@@ -11,13 +11,12 @@ public class PlayerController : GameEntity {
 	
 	// Update is called once per frame
 	protected void Update(){
-        float axis = 0;
-        //float axis = Input.GetAxis("Horizontal" + playerIndex);
+        float axis = Input.GetAxis("L_XAxis_" + playerIndex);
         if(axis != 0) {
             movement.x = axis;
         }
 
-        //axis = Input.GetAxis("Vertical" + playerIndex);
+        axis = Input.GetAxis("L_YAxis_" + playerIndex);
         if(axis != 0) {
             movement.z = -axis;
         }

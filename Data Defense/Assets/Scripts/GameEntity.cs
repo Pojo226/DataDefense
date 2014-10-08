@@ -10,7 +10,7 @@ public class GameEntity : MonoBehaviour {
 
     protected CharacterController charController;
 
-	protected void Start(){
+	virtual protected void Start(){
         charController = GetComponent<CharacterController>();
 	}
 	

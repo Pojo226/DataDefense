@@ -9,4 +9,6 @@ public class FixedValues : MonoBehaviour {
     public Transform aiContainer;
     public static Transform AIContainer { get { return instance.aiContainer;  } }
 
+    public enum Enemy_Types { Data, Virus, Program }
+
 }

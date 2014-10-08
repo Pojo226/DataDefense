@@ -9,7 +9,7 @@ public class AIController : GameEntity {
     protected float minTravelTime = 1;
     protected float maxTravelTime = 5;
 
-	protected void Start(){
+	protected override void Start(){
 	    base.Start();
         travelEndTime = Time.time;
 	}
@@ -23,4 +23,8 @@ public class AIController : GameEntity {
         movement = randomVector;
         base.Update();
 	}
+
+    protected virtual void OnTriggerEnter(Collider collider){
+        
+    }
 }
