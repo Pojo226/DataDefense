@@ -7,8 +7,9 @@ public class Data : AIController {
         base.Start();
     }
 
-    protected override void OnTriggerEnter(Collider collider){
+    protected override void OnCollisionEnter(Collision collision)
+    {
         Debug.Log("Hit by: " + collider.gameObject.layer);
-        base.OnTriggerEnter(collider);
+        base.OnCollisionEnter(collision);
     }
 }
