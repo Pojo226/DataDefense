@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerController : GameEntity {
 
+    public ScanController scan;
     public int playerIndex;
 
 	protected void Start(){
@@ -25,6 +26,7 @@ public class PlayerController : GameEntity {
 
         if (Input.GetButtonDown("X_" + playerIndex))
         {
+            //((GameObject)GameObject.Instantiate(ScanController.gameObject, transform.position, Quaternion.identity)).transform.parent = transform;
             Debug.Log("Player" + playerIndex + ": X");
         }
 
