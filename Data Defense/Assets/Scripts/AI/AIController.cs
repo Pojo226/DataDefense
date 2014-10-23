@@ -15,7 +15,6 @@ public class AIController : GameEntity {
 	}
 	
 	protected void Update(){
-        //Debug.Log(travelEndTime);
         if(travelEndTime <= Time.time){
             UpdateRandomMovementVector();
         }
@@ -24,8 +23,15 @@ public class AIController : GameEntity {
         base.Update();
 	}
 
-    protected virtual void OnCollisionEnter(Collision collision)
+    protected void OnTriggerEnter(Collider collider)
     {
+        Debug.Log("Trigger: " + gameObject.name);
+        UpdateRandomMovementVector();
+    }
+
+    protected void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision: " + gameObject.name);
         UpdateRandomMovementVector(collision);
     }
     protected void UpdateRandomMovementVector(){

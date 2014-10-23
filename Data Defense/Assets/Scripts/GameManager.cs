@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour {
 
 	private void Start () {
         AISpawner.ConfigureNextSpawn(FixedValues.Enemy_Types.Data, 1);
-        AISpawner.ConfigureNextSpawn(FixedValues.Enemy_Types.Program, 5);
-        AISpawner.ConfigureNextSpawn(FixedValues.Enemy_Types.Virus, 7);
+        AISpawner.ConfigureNextSpawn(FixedValues.Enemy_Types.Program, 1);
+        AISpawner.ConfigureNextSpawn(FixedValues.Enemy_Types.Virus, 1);
         AISpawner.SpawnWave();
 	}
 }
