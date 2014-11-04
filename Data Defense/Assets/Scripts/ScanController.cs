@@ -4,15 +4,15 @@ using System.Collections;
 public class ScanController : GameEntity {
 
 	// Use this for initialization
-	void Start () {
-        base.Start();
+    protected override void Awake() {
+        base.Awake();
 
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	protected void FixedUpdate () {
         movement = new Vector3(1, 0, 0);
-        base.Update();
+        base.FixedUpdate();
 
 	}
 }

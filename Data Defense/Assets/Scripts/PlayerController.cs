@@ -6,13 +6,12 @@ public class PlayerController : GameEntity {
     public ScanController scan;
     public int playerIndex;
 
-	protected void Start(){
-        base.Start();
+	protected void Awake(){
+        base.Awake();
 	}
 	
 	// Update is called once per frame
-    protected void Update()
-    {
+    protected override void FixedUpdate(){
         float axis = Input.GetAxis("L_XAxis_" + playerIndex);
         if (axis != 0)
         {
@@ -25,7 +24,7 @@ public class PlayerController : GameEntity {
             movement.z = -axis;
         }
 
-        base.Update();
+        base.FixedUpdate();
 
         if (Input.GetButtonDown("X_" + playerIndex))
         {
