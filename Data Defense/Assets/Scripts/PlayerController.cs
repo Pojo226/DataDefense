@@ -53,6 +53,10 @@ public class PlayerController : GameEntity {
         {
             Debug.Log("Player" + playerIndex + ": A");
         }
+
+
+		//Used to manage the power bars
+
 	}
 
 
