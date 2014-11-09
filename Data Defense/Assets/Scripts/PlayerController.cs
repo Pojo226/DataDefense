@@ -35,6 +35,7 @@ public class PlayerController : GameEntity {
         // Button resolution. Each Buttom will create a scan that targets a respective player
         if (Input.GetButtonDown("X_" + playerIndex))
         {
+
             //((GameObject)GameObject.Instantiate(ScanController.gameObject, transform.position, Quaternion.identity)).transform.parent = transform;
             Debug.Log("Player" + playerIndex + ": X");
         }
@@ -54,8 +55,6 @@ public class PlayerController : GameEntity {
             Debug.Log("Player" + playerIndex + ": A");
         }
 
-
-		//Used to manage the power bars
 
 	}
 
