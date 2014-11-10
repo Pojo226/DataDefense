@@ -19,7 +19,10 @@ public class ScanController : GameEntity {
 	
 	// Update is called once per frame
 	protected void Update () {
-        movement = new Vector3(0.99f, 0.0f, 0.0f);
+
+
+
+        movement = targetTransform.position;
         
         base.Update();
         
