@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 8
-  scanPrefab: {fileID: 0}
+  scanPrefab: {fileID: 11400000, guid: 5f4213d205e428d4884b7a4a0ac2a5f0, type: 2}
   scan: {fileID: 0}
   canFire: 0
   playerIndex: 1
@@ -236,6 +236,11 @@ Prefab:
       propertyPath: playerIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
+      propertyPath: scanPrefab
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f4213d205e428d4884b7a4a0ac2a5f0,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
   m_RootGameObject: {fileID: 713871480}
@@ -511,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 8
-  scanPrefab: {fileID: 0}
+  scanPrefab: {fileID: 11400000, guid: 5f4213d205e428d4884b7a4a0ac2a5f0, type: 2}
   scan: {fileID: 0}
   canFire: 0
   playerIndex: 2
@@ -672,7 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 8
-  scanPrefab: {fileID: 0}
+  scanPrefab: {fileID: 11400000, guid: 5f4213d205e428d4884b7a4a0ac2a5f0, type: 2}
   scan: {fileID: 0}
   canFire: 0
   playerIndex: 4
@@ -927,7 +932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 8
-  scanPrefab: {fileID: 0}
+  scanPrefab: {fileID: 11400000, guid: 5f4213d205e428d4884b7a4a0ac2a5f0, type: 2}
   scan: {fileID: 0}
   canFire: 0
   playerIndex: 3
@@ -1228,10 +1233,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiContainer: {fileID: 1009287786}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 3398102}
+  player2: {fileID: 452649942}
+  player3: {fileID: 713871483}
+  player4: {fileID: 529858395}
 --- !u!4 &1248989414
 Transform:
   m_ObjectHideFlags: 0
@@ -1730,6 +1735,11 @@ Prefab:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
+      propertyPath: scanPrefab
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f4213d205e428d4884b7a4a0ac2a5f0,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
   m_RootGameObject: {fileID: 3398100}
@@ -1862,6 +1872,11 @@ Prefab:
       propertyPath: playerIndex
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
+      propertyPath: scanPrefab
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f4213d205e428d4884b7a4a0ac2a5f0,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
   m_RootGameObject: {fileID: 529858392}
@@ -1922,6 +1937,11 @@ Prefab:
       propertyPath: playerIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
+      propertyPath: scanPrefab
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f4213d205e428d4884b7a4a0ac2a5f0,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
   m_RootGameObject: {fileID: 452649939}
