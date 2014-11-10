@@ -10,7 +10,7 @@ public class CameraSize : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    // Set the main camera field of view to 80 UnityUnits (UU's)
 		Camera.main.fieldOfView = 80;
 	}
 }

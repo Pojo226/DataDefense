@@ -38,8 +38,8 @@ public class PlayerController : GameEntity {
         // Button resolution. Each Buttom will create a scan that targets a respective player
         if (Input.GetButtonDown("X_" + playerIndex))
         {
-                if (playerIndex != 1 && canFire == true)
-                    setScan('x');
+            if (playerIndex != 1 && canFire == true)
+                SetScan('x');
             //((GameObject)GameObject.Instantiate(ScanController.gameObject, transform.position, Quaternion.identity)).transform.parent = transform;
             Debug.Log("Player" + playerIndex + ": X");
         }
@@ -47,7 +47,7 @@ public class PlayerController : GameEntity {
         if (Input.GetButtonDown("Y_" + playerIndex))
         {
             if (playerIndex != 2 && canFire == true)
-                setScan('y');
+                SetScan('y');
 
             Debug.Log("Player" + playerIndex + ": Y");
         }
@@ -55,7 +55,7 @@ public class PlayerController : GameEntity {
         if (Input.GetButtonDown("B_" + playerIndex))
         {
             if (playerIndex != 3 && canFire == true)
-                setScan('b');
+                SetScan('b');
 
             Debug.Log("Player" + playerIndex + ": B");
         }
@@ -63,7 +63,7 @@ public class PlayerController : GameEntity {
         if (Input.GetButtonDown("A_" + playerIndex))
         {
             if (playerIndex != 4 && canFire == true)
-                setScan('a');
+                SetScan('a');
 
             Debug.Log("Player" + playerIndex + ": A");
         }
@@ -71,33 +71,37 @@ public class PlayerController : GameEntity {
 
 	}
 
-    void setScan(char buttonDown)
+    void SetScan(char buttonDown)
     {
-        Transform tempTransform = transform;
-        scan = Instantiate(scanPrefab, tempTransform.position, Quaternion.identity) as ScanController;
+        // Create the scan
+        scan = Instantiate(scanPrefab, transform.position, Quaternion.identity) as ScanController;
+        
+        // Can't scan twice
         canFire = false;
+
+        // Avoid collision with it's own player --- we should make this better
         Vector3 newPos = scan.transform.position;
         newPos.y = 10;
         scan.transform.position = newPos;
 
 
-
+        // For each button down, set the proper target and let the scan know who made it
         switch (buttonDown)
         {
             case 'x':
-                scan.setTarget(1);
+                scan.SetTarget(1);
                 scan.myPlayer = playerIndex;
                 break;
             case 'y':
-                scan.setTarget(2);
+                scan.SetTarget(2);
                 scan.myPlayer = playerIndex;
                 break;
             case 'b':
-                scan.setTarget(3);
+                scan.SetTarget(3);
                 scan.myPlayer = playerIndex;
                 break;
             case 'a':
-                scan.setTarget(4);
+                scan.SetTarget(4);
                 scan.myPlayer = playerIndex;
                 break;
             default:
@@ -105,6 +109,12 @@ public class PlayerController : GameEntity {
         }
         
 
+    }
+
+    void OnDestroy()
+    {
+        // When the level ends, destroy the current scan
+        Destroy(scan);
     }
 
 }

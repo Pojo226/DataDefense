@@ -28,6 +28,7 @@ public class FixedValues : MonoBehaviour {
 	public static float superScan3 = 50.00f;
 	public static float superScan4 = 90.00f;
 
+    // This is so that scans can reset the "canFire" variable
     public PlayerController player1;
     public PlayerController player2;
     public PlayerController player3;
