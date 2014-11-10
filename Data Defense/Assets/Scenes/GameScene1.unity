@@ -122,7 +122,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 8
+  scanPrefab: {fileID: 0}
   scan: {fileID: 0}
+  canFire: 0
   playerIndex: 1
 --- !u!23 &3398103
 Renderer:
@@ -509,7 +511,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 8
+  scanPrefab: {fileID: 0}
   scan: {fileID: 0}
+  canFire: 0
   playerIndex: 2
 --- !u!23 &452649943
 Renderer:
@@ -561,7 +565,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 489487398}
   - 114: {fileID: 489487397}
-  - 114: {fileID: 489487396}
   - 114: {fileID: 489487395}
   m_Layer: 0
   m_Name: EventSystem
@@ -582,23 +585,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllowActivationOnStandalone: 0
---- !u!114 &489487396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 489487394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_AllowActivationOnMobileDevice: 0
 --- !u!114 &489487397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,7 +672,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 8
+  scanPrefab: {fileID: 0}
   scan: {fileID: 0}
+  canFire: 0
   playerIndex: 4
 --- !u!23 &529858396
 Renderer:
@@ -939,7 +927,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 8
+  scanPrefab: {fileID: 0}
   scan: {fileID: 0}
+  canFire: 0
   playerIndex: 3
 --- !u!23 &713871484
 Renderer:
@@ -1238,6 +1228,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiContainer: {fileID: 1009287786}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  player3: {fileID: 0}
+  player4: {fileID: 0}
 --- !u!4 &1248989414
 Transform:
   m_ObjectHideFlags: 0
