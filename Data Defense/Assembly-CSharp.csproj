@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CameraSize.cs" />
      <Compile Include="Assets\Scripts\AI\AIController.cs" />
      <Compile Include="Assets\Scripts\AI\Data.cs" />
      <Compile Include="Assets\Scripts\AISpawner.cs" />
