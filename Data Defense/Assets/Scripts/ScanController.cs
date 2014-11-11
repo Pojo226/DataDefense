@@ -4,7 +4,7 @@ using System.Collections;
 public class ScanController : GameEntity {
 
     // Reference for players
-    GameObject fixedGO;
+    FixedValues fixedGO;
 
     // The player who initiated the scan
     public int myPlayer;
@@ -14,11 +14,7 @@ public class ScanController : GameEntity {
 
 	// Use this for initialization
 	protected void Start () {
-        // Initialize the FixedGO. Also, set up a time limit for the scan since we don't have collision detection yet
-        fixedGO = GameObject.Find("Fixed Values");
-        Destroy(gameObject, 1.5f);
         base.Start();
-
 	}
 	
 	// Update is called once per frame
@@ -34,20 +30,25 @@ public class ScanController : GameEntity {
 
     public void SetTarget(int playerIndex)
     {
+        // Initialize the FixedGO. Also, set up a time limit for the scan since we don't have collision detection yet
+        fixedGO = GameObject.Find("Fixed Values").GetComponent<FixedValues>();
+        Destroy(gameObject, 1.5f);
+
+
         // We can use GameObject.Find because we are not doing this every frame.
         switch (playerIndex)
         {
             case 1:
-                targetTransform = GameObject.Find("Player1").transform;
+                targetTransform = fixedGO.player1.transform;
                 break;
             case 2:
-                targetTransform = GameObject.Find("Player2").transform;
+                targetTransform = fixedGO.player2.transform;
                 break;
             case 3:
-                targetTransform = GameObject.Find("Player3").transform;
+                targetTransform = fixedGO.player3.transform;
                 break;
             case 4:
-                targetTransform = GameObject.Find("Player4").transform;
+                targetTransform = fixedGO.player4.transform;
                 break;
             default:
                 break;
@@ -63,19 +64,19 @@ public class ScanController : GameEntity {
                 // when the scan is done, the player may now initialize another scan. In each case, make sure the fixedGO exists.
             case 1:
                 if (fixedGO != null)
-                    fixedGO.GetComponent<FixedValues>().player1.canFire = true;
+                    fixedGO.player1.canFire = true;
                 break;
             case 2:
                 if (fixedGO != null)
-                    fixedGO.GetComponent<FixedValues>().player2.canFire = true;
+                    fixedGO.player2.canFire = true;
                 break;
             case 3:
                 if (fixedGO != null)
-                    fixedGO.GetComponent<FixedValues>().player3.canFire = true;
+                    fixedGO.player3.canFire = true;
                 break;
             case 4:
                 if (fixedGO != null)
-                    fixedGO.GetComponent<FixedValues>().player4.canFire = true;
+                    fixedGO.player4.canFire = true;
                 break;
             default:
                 break;

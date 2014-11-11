@@ -40,7 +40,6 @@ public class PlayerController : GameEntity {
         {
             if (playerIndex != 1 && canFire == true)
                 SetScan('x');
-            //((GameObject)GameObject.Instantiate(ScanController.gameObject, transform.position, Quaternion.identity)).transform.parent = transform;
             Debug.Log("Player" + playerIndex + ": X");
         }
 
@@ -48,7 +47,6 @@ public class PlayerController : GameEntity {
         {
             if (playerIndex != 2 && canFire == true)
                 SetScan('y');
-
             Debug.Log("Player" + playerIndex + ": Y");
         }
 
@@ -56,7 +54,6 @@ public class PlayerController : GameEntity {
         {
             if (playerIndex != 3 && canFire == true)
                 SetScan('b');
-
             Debug.Log("Player" + playerIndex + ": B");
         }
 
@@ -64,7 +61,6 @@ public class PlayerController : GameEntity {
         {
             if (playerIndex != 4 && canFire == true)
                 SetScan('a');
-
             Debug.Log("Player" + playerIndex + ": A");
         }
 
