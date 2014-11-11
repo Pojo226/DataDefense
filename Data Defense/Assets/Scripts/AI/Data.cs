@@ -8,10 +8,10 @@ public class Data : AIController {
         base.Start();
     }
 
-    // When there's a collision, call base collision method
-    protected override void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Hit by: " + collider.gameObject.layer);
-        base.OnCollisionEnter(collision);
-    }
+//    // When there's a collision, call base collision method
+//    protected override void OnCollisionEnter(Collision collision)
+//    {
+//        Debug.Log("Hit by: " + collider.gameObject.layer);
+//        base.OnCollisionEnter(collision);
+//    }
 }

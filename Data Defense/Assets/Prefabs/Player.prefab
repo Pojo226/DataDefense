@@ -83,7 +83,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9a73b8574a408479776bce64496de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 8
+  maxSpeed: 15
+  scanPrefab: {fileID: 0}
+  scan: {fileID: 0}
+  canFire: 0
   playerIndex: 1
 --- !u!143 &14300000
 CharacterController:
