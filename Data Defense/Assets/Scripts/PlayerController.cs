@@ -38,30 +38,30 @@ public class PlayerController : GameEntity {
         // Button resolution. Each Buttom will create a scan that targets a respective player
         if (Input.GetButtonDown("X_" + playerIndex))
         {
-            if (playerIndex != 1 && canFire == true)
+            if (playerIndex != 1 && canFire == true){
                 SetScan('x');
-            Debug.Log("Player" + playerIndex + ": X");
+			}
         }
 
         if (Input.GetButtonDown("Y_" + playerIndex))
         {
-            if (playerIndex != 2 && canFire == true)
+            if (playerIndex != 2 && canFire == true){
                 SetScan('y');
-            Debug.Log("Player" + playerIndex + ": Y");
+			}
         }
 
         if (Input.GetButtonDown("B_" + playerIndex))
         {
-            if (playerIndex != 3 && canFire == true)
+            if (playerIndex != 3 && canFire == true){
                 SetScan('b');
-            Debug.Log("Player" + playerIndex + ": B");
+			}
         }
 
         if (Input.GetButtonDown("A_" + playerIndex))
         {
-            if (playerIndex != 4 && canFire == true)
-                SetScan('a');
-            Debug.Log("Player" + playerIndex + ": A");
+            if(playerIndex != 4 && canFire == true){
+				SetScan('a');
+			}
         }
 
 

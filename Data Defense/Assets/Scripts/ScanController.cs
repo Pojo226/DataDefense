@@ -57,8 +57,6 @@ public class ScanController : GameEntity {
 
     void OnDestroy()
     {
-        print("Script was destroyed");
-
         switch (myPlayer)
         {
                 // when the scan is done, the player may now initialize another scan. In each case, make sure the fixedGO exists.

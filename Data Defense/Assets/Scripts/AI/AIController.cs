@@ -36,7 +36,11 @@ public class AIController : GameEntity {
     // When there's a collision, change the direction
     protected virtual void OnCollisionEnter(Collision collision)
     {
-		Debug.Log(gameObject.name + " Hit by: " + collider.gameObject.layer);
+		if(collision.gameObject.layer != 0){ //If collision isn't with default/world
+			//Here is where the "if(!superscan) goes
+			Destroy(gameObject);
+			Destroy(collision.gameObject);
+		}
         UpdateRandomMovementVector(collision);
     }
 
