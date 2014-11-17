@@ -38,6 +38,7 @@ public class AIController : GameEntity {
     {
 		if(collision.gameObject.layer != 0){ //If collision isn't with default/world
 			//Here is where the "if(!superscan) goes
+			FixedValues.superScanVals[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
 			Destroy(gameObject);
 			Destroy(collision.gameObject);
 		}

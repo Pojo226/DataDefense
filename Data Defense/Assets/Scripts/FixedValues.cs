@@ -23,14 +23,8 @@ public class FixedValues : MonoBehaviour {
 	public static float Scan_Max = 100.00f;
 
 	//int representing super scan progress for each player
-	public static float superScan1 = 70.00f;
-	public static float superScan2 = 100.00f;
-	public static float superScan3 = 50.00f;
-	public static float superScan4 = 90.00f;
+	public static float[] superScanVals = { 0.0f, 0.0f, 0.0f, 0.0f };
 
     // This is so that scans can reset the "canFire" variable
-    public PlayerController player1;
-    public PlayerController player2;
-    public PlayerController player3;
-    public PlayerController player4;
+	public PlayerController[] players;
 }

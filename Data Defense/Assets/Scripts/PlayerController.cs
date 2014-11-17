@@ -22,13 +22,13 @@ public class PlayerController : GameEntity {
 	protected void Update(){
 
         // Movement controls
-        float axis = Input.GetAxis("L_XAxis_" + playerIndex);
+        float axis = Input.GetAxis("L_XAxis_" + (playerIndex + 1));
         if(axis != 0) {
             movement.x = axis;
         }
 
-        axis = Input.GetAxis("L_YAxis_" + playerIndex);
-        if(axis != 0) {
+		axis = Input.GetAxis("L_YAxis_" + (playerIndex + 1));
+		if(axis != 0) {
             movement.z = -axis;
         }
         
@@ -36,29 +36,29 @@ public class PlayerController : GameEntity {
         base.Update();
 
         // Button resolution. Each Buttom will create a scan that targets a respective player
-        if (Input.GetButtonDown("X_" + playerIndex))
-        {
+		if (Input.GetButtonDown("X_" + (playerIndex + 1)))
+		{
             if (playerIndex != 1 && canFire == true){
                 SetScan('x');
 			}
         }
 
-        if (Input.GetButtonDown("Y_" + playerIndex))
-        {
+		if (Input.GetButtonDown("Y_" + (playerIndex + 1)))
+		{
             if (playerIndex != 2 && canFire == true){
                 SetScan('y');
 			}
         }
 
-        if (Input.GetButtonDown("B_" + playerIndex))
-        {
+		if (Input.GetButtonDown("B_" + (playerIndex + 1)))
+		{
             if (playerIndex != 3 && canFire == true){
                 SetScan('b');
 			}
         }
 
-        if (Input.GetButtonDown("A_" + playerIndex))
-        {
+		if (Input.GetButtonDown("A_" + (playerIndex + 1)))
+		{
             if(playerIndex != 4 && canFire == true){
 				SetScan('a');
 			}

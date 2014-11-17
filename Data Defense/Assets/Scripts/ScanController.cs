@@ -13,12 +13,12 @@ public class ScanController : GameEntity {
     public Transform targetTransform;
 
 	// Use this for initialization
-	protected void Start () {
+	protected void Start(){
         base.Start();
 	}
 	
 	// Update is called once per frame
-	protected void Update () {
+	protected void Update(){
 
         // Set the movement towards the target player using subtraction and vector normalization
         movement = new Vector3(targetTransform.position.x - transform.position.x, 0, targetTransform.position.z - transform.position.z);
@@ -28,59 +28,16 @@ public class ScanController : GameEntity {
         
 	}
 
-    public void SetTarget(int playerIndex)
-    {
+    public void SetTarget(int playerIndex){
         // Initialize the FixedGO. Also, set up a time limit for the scan since we don't have collision detection yet
         fixedGO = GameObject.Find("Fixed Values").GetComponent<FixedValues>();
         Destroy(gameObject, 1.5f);
 
-
         // We can use GameObject.Find because we are not doing this every frame.
-        switch (playerIndex)
-        {
-            case 1:
-                targetTransform = fixedGO.player1.transform;
-                break;
-            case 2:
-                targetTransform = fixedGO.player2.transform;
-                break;
-            case 3:
-                targetTransform = fixedGO.player3.transform;
-                break;
-            case 4:
-                targetTransform = fixedGO.player4.transform;
-                break;
-            default:
-                break;
-        }
+		targetTransform = fixedGO.players[playerIndex].transform;
+	}
+	
+	void OnDestroy(){
+		fixedGO.players[myPlayer].canFire = true;
     }
-
-    void OnDestroy()
-    {
-        switch (myPlayer)
-        {
-                // when the scan is done, the player may now initialize another scan. In each case, make sure the fixedGO exists.
-            case 1:
-                if (fixedGO != null)
-                    fixedGO.player1.canFire = true;
-                break;
-            case 2:
-                if (fixedGO != null)
-                    fixedGO.player2.canFire = true;
-                break;
-            case 3:
-                if (fixedGO != null)
-                    fixedGO.player3.canFire = true;
-                break;
-            case 4:
-                if (fixedGO != null)
-                    fixedGO.player4.canFire = true;
-                break;
-            default:
-                break;
-        }
-
-        
-    }
-
 }
