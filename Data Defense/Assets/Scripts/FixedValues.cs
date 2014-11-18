@@ -20,7 +20,7 @@ public class FixedValues : MonoBehaviour {
 	public static float gameTime;
 
 	//Amount of "Scan points" needed to fill the super scan bar
-	public static float Scan_Max = 100.00f;
+	public static float Scan_Max = 20.0f;
 
 	//int representing super scan progress for each player
 	public static float[] superScanVals = { 0.0f, 0.0f, 0.0f, 0.0f };
