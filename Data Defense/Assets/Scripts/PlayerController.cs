@@ -73,13 +73,7 @@ public class PlayerController : GameEntity {
         scan = Instantiate(scanPrefab, transform.position, Quaternion.identity) as ScanController;
         
         // Can't scan twice
-        canFire = false;
-
-        // Avoid collision with it's own player --- we should make this better
-        Vector3 newPos = scan.transform.position;
-        newPos.y = 10;
-        scan.transform.position = newPos;
-
+		canFire = false;
 
         // For each button down, set the proper target and let the scan know who made it
         switch (buttonDown)
