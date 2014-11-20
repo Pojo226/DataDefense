@@ -25,6 +25,8 @@ public class FixedValues : MonoBehaviour {
 	//int representing super scan progress for each player
 	public static float[] superScanVals = { 0.0f, 0.0f, 0.0f, 0.0f };
 
+	public static int[] playerScores = { 0, 0, 0, 0 };
+
     // This is so that scans can reset the "canFire" variable
 	public PlayerController[] players;
 }
