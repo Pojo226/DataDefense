@@ -519,7 +519,7 @@ MonoBehaviour:
   scanPrefab: {fileID: 11400000, guid: 5f4213d205e428d4884b7a4a0ac2a5f0, type: 2}
   scan: {fileID: 0}
   canFire: 0
-  playerIndex: 1
+  playerIndex: 3
 --- !u!23 &452649943
 Renderer:
   m_ObjectHideFlags: 0
@@ -681,7 +681,7 @@ MonoBehaviour:
   scanPrefab: {fileID: 11400000, guid: 5f4213d205e428d4884b7a4a0ac2a5f0, type: 2}
   scan: {fileID: 0}
   canFire: 0
-  playerIndex: 3
+  playerIndex: 1
 --- !u!23 &529858396
 Renderer:
   m_ObjectHideFlags: 0
@@ -868,7 +868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9873c56686aba6247b1a35c348c568f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 2
+  player: 1
   bar: {fileID: 0}
 --- !u!1 &713871480
 GameObject:
@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .91369164, g: .926470578, b: 0, a: 1}
+  m_Color: {r: .220588207, g: .516227186, b: 1, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2474a823a9a0a457cba6f06128b16663, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
@@ -1413,7 +1413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9873c56686aba6247b1a35c348c568f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 1
+  player: 2
   bar: {fileID: 0}
 --- !u!1 &1400345392
 GameObject:
@@ -1726,7 +1726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .220588207, g: .516227186, b: 1, a: 1}
+  m_Color: {r: .917647064, g: .929411769, b: 0, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2474a823a9a0a457cba6f06128b16663, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
@@ -2192,7 +2192,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: b79cd25f50ea10243b7d38a76baf03ce, type: 2}
     - target: {fileID: 11400000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
       propertyPath: playerIndex
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
       propertyPath: scanPrefab
@@ -2257,7 +2257,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: a73075bf353f87b49a217eac124faf2b, type: 2}
     - target: {fileID: 11400000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
       propertyPath: playerIndex
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
       propertyPath: scanPrefab

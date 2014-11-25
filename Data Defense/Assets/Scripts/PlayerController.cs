@@ -71,7 +71,8 @@ public class PlayerController : GameEntity {
     {
         // Create the scan
         scan = Instantiate(scanPrefab, transform.position, Quaternion.identity) as ScanController;
-        
+		scan.GetComponent<MeshRenderer>().material.color = GetComponent<MeshRenderer>().sharedMaterial.color;
+
         // Can't scan twice
 		canFire = false;
 
@@ -104,7 +105,7 @@ public class PlayerController : GameEntity {
     void OnDestroy()
     {
         // When the level ends, destroy the current scan
-        Destroy(scan);
+        Destroy(scan.gameObject);
     }
 
 }
