@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class AISpawner : MonoBehaviour {
 
+	private static AISpawner instance;
+
     // Array that contains enemies to spawn
     public AIController[] enemies;
 
@@ -15,6 +17,7 @@ public class AISpawner : MonoBehaviour {
 
     // Initialize the spawnwaves array to the length of unique enemies
     private void Start(){
+		instance = this;
         spawnWaves = new int[enemies.Length];
     }
 
@@ -39,4 +42,20 @@ public class AISpawner : MonoBehaviour {
             }
         }
     }
+
+
+
+	public static void SpawnImmediately(FixedValues.Enemy_Types enemyType, int numToSpawn, Transform spawnLocation){
+		instance.SpawnImmediatelyInternal(enemyType, numToSpawn, spawnLocation);
+	}
+
+	private void SpawnImmediatelyInternal(FixedValues.Enemy_Types enemyType, int numToSpawn, Transform spawnLocation){
+		for(int i = 0; i < numToSpawn; i++){
+			((GameObject)GameObject.Instantiate(enemies[(int)enemyType].gameObject, spawnLocation.position, Quaternion.identity)).transform.parent = transform;
+		}
+
+		if(!enemyType.Equals(FixedValues.Enemy_Types.Data)){
+			enemyNum += numToSpawn;
+		}
+	}
 }

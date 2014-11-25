@@ -101,11 +101,4 @@ public class PlayerController : GameEntity {
         
 
     }
-
-    void OnDestroy()
-    {
-        // When the level ends, destroy the current scan
-        Destroy(scan.gameObject);
-    }
-
 }

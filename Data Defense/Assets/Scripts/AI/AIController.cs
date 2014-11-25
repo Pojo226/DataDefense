@@ -40,6 +40,8 @@ public class AIController : GameEntity {
 			//Here is where the "if(!superscan) goes
 			FixedValues.playerScores[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
 			FixedValues.superScanVals[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
+			AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
+
 			Destroy(gameObject);
 			Destroy(collision.gameObject);
 		}
