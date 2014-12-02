@@ -39,23 +39,14 @@ public class AIController : GameEntity {
 		if(collision.gameObject.layer != 0){ //If collision isn't with default/world
 			ScanController scan = collision.gameObject.GetComponent<ScanController>();
 
-			//Here is where the "if(!superscan) goes
-			if(!scan.superScan)
-			{
-				FixedValues.playerScores[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
-				FixedValues.superScanVals[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
-				FixedValues.enemyNum--;
-				AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
-				Destroy(gameObject);
-				Destroy(collision.gameObject);
-			}
-			else  //don't destroy the scan if it is super
-			{
-				FixedValues.playerScores[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
-				FixedValues.superScanVals[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
-				FixedValues.enemyNum--;
-				AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
-				Destroy(gameObject);
+            FixedValues.playerScores[scan.myPlayer]++;
+            FixedValues.superScanVals[scan.myPlayer]++;
+            FixedValues.enemyNum--;
+            AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
+            Destroy(gameObject);
+
+			if(!scan.superScan){
+                Destroy(collision.gameObject);
 			}
 		}
         UpdateRandomMovementVector(collision);
