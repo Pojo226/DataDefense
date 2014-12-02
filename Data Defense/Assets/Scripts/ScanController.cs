@@ -10,11 +10,15 @@ public class ScanController : GameEntity {
     public int myPlayer;
 
     // The target player's transform
-    public Transform targetTransform;
+	public Transform targetTransform;
+	
+	//bool for whether or not scan is a Super Scan
+	public bool superScan;
 
 	// Use this for initialization
 	protected void Start(){
         base.Start();
+		superScan = false;
 	}
 	
 	// Update is called once per frame

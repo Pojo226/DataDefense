@@ -12,9 +12,6 @@ public class AISpawner : MonoBehaviour {
     // Array to state how many of each enemy to spawn
     private int[] spawnWaves;
 
-	//the number of enemies currently on screen
-	public int enemyNum;
-
     // Initialize the spawnwaves array to the length of unique enemies
     private void Start(){
 		instance = this;
@@ -37,7 +34,7 @@ public class AISpawner : MonoBehaviour {
 				//add to enemyNum if enemy is on screen
 				if( !spawnWaves[i].Equals(FixedValues.Enemy_Types.Data))
 				{
-					enemyNum++;
+					FixedValues.enemyNum++;
 				}
             }
         }
@@ -55,7 +52,7 @@ public class AISpawner : MonoBehaviour {
 		}
 
 		if(!enemyType.Equals(FixedValues.Enemy_Types.Data)){
-			enemyNum += numToSpawn;
+			//FixedValues.enemyNum += numToSpawn;
 		}
 	}
 }

@@ -20,7 +20,7 @@ public class FixedValues : MonoBehaviour {
 	public static float gameTime;
 
 	//Amount of "Scan points" needed to fill the super scan bar
-	public static float Scan_Max = 20.0f;
+	public static float Scan_Max = 10.0f;
 
 	//int representing super scan progress for each player
 	public static float[] superScanVals = { 0.0f, 0.0f, 0.0f, 0.0f };
@@ -29,4 +29,10 @@ public class FixedValues : MonoBehaviour {
 
     // This is so that scans can reset the "canFire" variable
 	public PlayerController[] players;
+
+	// Number of enemies on screen. Used for wave spawning
+	public static int enemyNum = 0;
+
+	//Wave number
+	public static int waveNum;
 }

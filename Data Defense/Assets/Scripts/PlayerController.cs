@@ -7,6 +7,7 @@ public class PlayerController : GameEntity {
     public ScanController scanPrefab;
     public ScanController scan;
     public bool canFire;
+	public bool hasSuper;
 
     // Effectively, the players identification number
     public int playerIndex;
@@ -20,6 +21,14 @@ public class PlayerController : GameEntity {
 
 	// Update is called once per frame
 	protected void Update(){
+
+		//check if the player can use a super scan
+		if (FixedValues.superScanVals[playerIndex] >= FixedValues.Scan_Max) {
+			hasSuper = true;
+		}
+		else {
+			hasSuper = false;
+		}
 
         // Movement controls
         float axis = Input.GetAxis("L_XAxis_" + (playerIndex + 1));
@@ -35,36 +44,46 @@ public class PlayerController : GameEntity {
         // Call base update method for movement resolution
         base.Update();
 
-        // Button resolution. Each Buttom will create a scan that targets a respective player
+		// Button resolution. Each Buttom will create a scan that targets a respective player
 		if (Input.GetButtonDown("X_" + (playerIndex + 1)))
 		{
-            if (playerIndex != 0 && canFire == true){
-                SetScan('x');
+			if (hasSuper == true && playerIndex != 0 && canFire == true && (Input.GetButton("RB_ " + (playerIndex + 1)) || Input.GetButton("LB_ " + (playerIndex + 1)))){
+				SetSuperScan('x');
 			}
-        }
-
+			else if (playerIndex != 0 && canFire == true){
+				SetScan('x');
+			}
+		}
+		
 		if (Input.GetButtonDown("Y_" + (playerIndex + 1)))
 		{
-            if (playerIndex != 1 && canFire == true){
-                SetScan('y');
+			if (hasSuper == true && playerIndex != 1 && canFire == true && (Input.GetButton("RB_ " + (playerIndex + 1)) || Input.GetButton("LB_ " + (playerIndex + 1)))){
+				SetSuperScan('y');
 			}
-        }
-
+			else if (playerIndex != 1 && canFire == true){
+				SetScan('y');
+			}
+		}
+		
 		if (Input.GetButtonDown("B_" + (playerIndex + 1)))
 		{
-            if (playerIndex != 2 && canFire == true){
-                SetScan('b');
+			if (hasSuper == true && playerIndex != 2 && canFire == true && (Input.GetButton("RB_ " + (playerIndex + 1)) || Input.GetButton("LB_ " + (playerIndex + 1)))){
+				SetSuperScan('b');
 			}
-        }
-
+			else if (playerIndex != 2 && canFire == true){
+				SetScan('b');
+			}
+		}
+		
 		if (Input.GetButtonDown("A_" + (playerIndex + 1)))
 		{
-            if(playerIndex != 3 && canFire == true){
+			if (hasSuper == true && playerIndex != 3 && canFire == true && (Input.GetButton("RB_ " + (playerIndex + 1)) || Input.GetButton("LB_ " + (playerIndex + 1)))){
+				SetSuperScan('a');
+			}
+			else if (playerIndex != 3 && canFire == true){
 				SetScan('a');
 			}
-        }
-
-
+		}
 	}
 
     void SetScan(char buttonDown)
@@ -98,7 +117,44 @@ public class PlayerController : GameEntity {
             default:
                 break;
         }
-        
-
     }
+	
+	void SetSuperScan(char buttonDown)
+	{
+		// Create the scan
+		scan = Instantiate(scanPrefab, transform.position, Quaternion.identity) as ScanController;
+		
+		// Can't scan twice
+		canFire = false;
+		
+		// Reset the Super Scan Value
+		FixedValues.superScanVals [playerIndex] = 0.0f;
+		
+		// For each button down, set the proper target and let the scan know who made it
+		switch (buttonDown)
+		{
+		case 'x':
+			scan.SetTarget(0);
+			scan.myPlayer = playerIndex;
+			scan.superScan = true;
+			break;
+		case 'y':
+			scan.SetTarget(1);
+			scan.myPlayer = playerIndex;
+			scan.superScan = true;
+			break;
+		case 'b':
+			scan.SetTarget(2);
+			scan.myPlayer = playerIndex;
+			scan.superScan = true;
+			break;
+		case 'a':
+			scan.SetTarget(3);
+			scan.myPlayer = playerIndex;
+			scan.superScan = true;
+			break;
+		default:
+			break;
+		}
+	}
 }

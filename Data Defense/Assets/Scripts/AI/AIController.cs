@@ -37,13 +37,26 @@ public class AIController : GameEntity {
     protected virtual void OnCollisionEnter(Collision collision)
     {
 		if(collision.gameObject.layer != 0){ //If collision isn't with default/world
-			//Here is where the "if(!superscan) goes
-			FixedValues.playerScores[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
-			FixedValues.superScanVals[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
-			AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
+			ScanController scan = collision.gameObject.GetComponent<ScanController>();
 
-			Destroy(gameObject);
-			Destroy(collision.gameObject);
+			//Here is where the "if(!superscan) goes
+			if(!scan.superScan)
+			{
+				FixedValues.playerScores[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
+				FixedValues.superScanVals[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
+				FixedValues.enemyNum--;
+				AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
+				Destroy(gameObject);
+				Destroy(collision.gameObject);
+			}
+			else  //don't destroy the scan if it is super
+			{
+				FixedValues.playerScores[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
+				FixedValues.superScanVals[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
+				FixedValues.enemyNum--;
+				AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
+				Destroy(gameObject);
+			}
 		}
         UpdateRandomMovementVector(collision);
     }
