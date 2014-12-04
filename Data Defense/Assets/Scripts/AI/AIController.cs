@@ -36,20 +36,25 @@ public class AIController : GameEntity {
     // When there's a collision, change the direction
     protected virtual void OnCollisionEnter(Collision collision)
     {
-		if(collision.gameObject.layer != 0){ //If collision isn't with default/world
-			ScanController scan = collision.gameObject.GetComponent<ScanController>();
+        switch(collision.gameObject.layer){
+            case 0: //World/Terrain
+                UpdateRandomMovementVector(collision);
+                break;
+            case 10: //Scans - unhardcode this referene later?
+                ScanController scan = collision.gameObject.GetComponent<ScanController>();
 
-            FixedValues.playerScores[scan.myPlayer]++;
-            FixedValues.superScanVals[scan.myPlayer]++;
-            FixedValues.enemyNum--;
-            AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
-            Destroy(gameObject);
+                FixedValues.playerScores[scan.myPlayer]++;
+                FixedValues.superScanVals[scan.myPlayer]++;
+                FixedValues.enemyNum--;
+                AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
+                Destroy(gameObject);
 
-			if(!scan.superScan){
-                Destroy(collision.gameObject);
-			}
-		}
-        UpdateRandomMovementVector(collision);
+			    if(!scan.superScan){
+                    Destroy(collision.gameObject);
+			    }
+                break;
+
+        }
     }
 
     // Change the direction

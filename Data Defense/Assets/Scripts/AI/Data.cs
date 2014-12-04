@@ -11,13 +11,21 @@ public class Data : AIController {
     // When there's a collision, call base collision method
     protected override void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.layer != 0){ //If collision isn't with default/world
-            ScanController scan = collision.gameObject.GetComponent<ScanController>();
-            FixedValues.playerScores[scan.myPlayer] += 3;
-            //FixedValues.superScanVals[scan.myPlayer] += 3;
+        switch(collision.gameObject.layer){
+            case 0: //Default/World
+                UpdateRandomMovementVector(collision);
+                break;
+            case 10: //Scans
+                ScanController scan = collision.gameObject.GetComponent<ScanController>();
+                FixedValues.playerScores[scan.myPlayer] += 3;
+                //FixedValues.superScanVals[scan.myPlayer] += 3;
 
-            Destroy(gameObject);
+                Destroy(gameObject);
+                break;
+            case 9:
+                //Convert to corrupted here.
+                //gameObject.layer = 9;
+                break;
         }
-        UpdateRandomMovementVector(collision);
     }
 }
