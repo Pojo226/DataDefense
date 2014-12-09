@@ -36,29 +36,25 @@ public class AIController : GameEntity {
     // When there's a collision, change the direction
     protected virtual void OnCollisionEnter(Collision collision)
     {
-		if(collision.gameObject.layer != 0){ //If collision isn't with default/world
-			ScanController scan = collision.gameObject.GetComponent<ScanController>();
-			
-			FixedValues.enemyNum--;
+        switch(collision.gameObject.layer){
+            case 0: //World/Terrain
+                UpdateRandomMovementVector(collision);
+                break;
+            case FixedValues.Scans_Layer:
+                ScanController scan = collision.gameObject.GetComponent<ScanController>();
 
-			//Here is where the "if(!superscan) goes
-			if(!scan.superScan)
-			{
-				FixedValues.playerScores[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
-				FixedValues.superScanVals[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
-				AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
-				Destroy(gameObject);
-				Destroy(collision.gameObject);
-			}
-			else  //don't destroy the scan if it is super
-			{
-				FixedValues.playerScores[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
-				FixedValues.superScanVals[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
-				AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
-				Destroy(gameObject);
-			}
-		}
-        UpdateRandomMovementVector(collision);
+                FixedValues.playerScores[scan.myPlayer]++;
+                FixedValues.superScanVals[scan.myPlayer]++;
+                FixedValues.enemyNum--;
+                AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
+                Destroy(gameObject);
+
+			    if(!scan.superScan){
+                    Destroy(collision.gameObject);
+			    }
+                break;
+
+        }
     }
 
     // Change the direction
