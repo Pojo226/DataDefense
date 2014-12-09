@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Data : AIController {
 
+    protected bool corrupted;
+
     // Call base start function
     protected override void Start(){
         base.Start();
@@ -17,8 +19,9 @@ public class Data : AIController {
                 break;
             case FixedValues.Scans_Layer:
                 ScanController scan = collision.gameObject.GetComponent<ScanController>();
-                FixedValues.playerScores[scan.myPlayer] += 3;
-                //FixedValues.superScanVals[scan.myPlayer] += 3;
+                int scoreAmt = corrupted ? 1 : 3;
+                FixedValues.playerScores[scan.myPlayer] += scoreAmt;
+                FixedValues.superScanVals[scan.myPlayer] += scoreAmt;
 
                 Destroy(gameObject);
                 break;
@@ -26,6 +29,7 @@ public class Data : AIController {
                 //Convert to corrupted here.
                 gameObject.layer = FixedValues.CorruptedData_Layer;
                 this.GetComponent<MeshRenderer>().material.color = Color.red;
+                corrupted = true;
                 break;
         }
     }
