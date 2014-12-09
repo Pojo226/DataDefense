@@ -35,4 +35,12 @@ public class FixedValues : MonoBehaviour {
 
 	//Wave number
 	public static int waveNum;
+
+
+
+    public const int Player_Layer = 8;
+    public const int Enemies_Layer = 9;
+    public const int Scans_Layer = 10;
+    public const int NeutralData_Layer = 11;
+    public const int CorruptedData_Layer = 12;
 }

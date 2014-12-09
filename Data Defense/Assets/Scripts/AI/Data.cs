@@ -15,16 +15,17 @@ public class Data : AIController {
             case 0: //Default/World
                 UpdateRandomMovementVector(collision);
                 break;
-            case 10: //Scans
+            case FixedValues.Scans_Layer:
                 ScanController scan = collision.gameObject.GetComponent<ScanController>();
                 FixedValues.playerScores[scan.myPlayer] += 3;
                 //FixedValues.superScanVals[scan.myPlayer] += 3;
 
                 Destroy(gameObject);
                 break;
-            case 9:
+            case FixedValues.Enemies_Layer:
                 //Convert to corrupted here.
-                //gameObject.layer = 9;
+                gameObject.layer = FixedValues.CorruptedData_Layer;
+                this.GetComponent<MeshRenderer>().material.color = Color.red;
                 break;
         }
     }

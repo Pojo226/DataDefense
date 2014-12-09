@@ -29,7 +29,7 @@ public class AISpawner : MonoBehaviour {
         for(int i = 0; i < spawnWaves.Length; i++){
             // Create the number of enemies specified in the array
             for(int j = 0; j < spawnWaves[i]; j++){
-                ((GameObject)GameObject.Instantiate(enemies[i].gameObject, transform.position, Quaternion.identity)).transform.parent = transform;
+                ((GameObject)GameObject.Instantiate(enemies[i].gameObject, RandomPosition(transform.position), Quaternion.identity)).transform.parent = transform;
 
 				//add to enemyNum if enemy is on screen
 				if( !spawnWaves[i].Equals(FixedValues.Enemy_Types.Data))
@@ -55,4 +55,8 @@ public class AISpawner : MonoBehaviour {
 			//FixedValues.enemyNum += numToSpawn;
 		}
 	}
+
+    private Vector3 RandomPosition(Vector3 basePosition){
+        return basePosition + new Vector3(Random.Range(-8, 8), 0, Random.Range(-8, 8));
+    }
 }

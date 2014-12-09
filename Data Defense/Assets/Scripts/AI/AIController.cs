@@ -40,7 +40,7 @@ public class AIController : GameEntity {
             case 0: //World/Terrain
                 UpdateRandomMovementVector(collision);
                 break;
-            case 10: //Scans - unhardcode this referene later?
+            case FixedValues.Scans_Layer:
                 ScanController scan = collision.gameObject.GetComponent<ScanController>();
 
                 FixedValues.playerScores[scan.myPlayer]++;
