@@ -23,7 +23,7 @@ public class PlayerController : GameEntity {
 	protected void Update(){
 
 		//check if the player can use a super scan
-		if (FixedValues.superScanVals[playerIndex] >= FixedValues.Scan_Max) {
+		if (FixedValues.superScanVals[playerIndex] >= FixedValues.superScanCost) {
 			hasSuper = true;
 		}
 		else {
@@ -47,7 +47,7 @@ public class PlayerController : GameEntity {
 		// Button resolution. Each Buttom will create a scan that targets a respective player
 		if (Input.GetButtonDown("X_" + (playerIndex + 1)))
 		{
-			if (hasSuper == true && playerIndex != 0 && canFire == true && (Input.GetButton("RB_ " + (playerIndex + 1)) || Input.GetButton("LB_ " + (playerIndex + 1)))){
+			if (hasSuper == true && playerIndex != 0 && canFire == true && (Input.GetButton("RB_" + (playerIndex + 1)) || Input.GetButton("LB_" + (playerIndex + 1)))){
 				SetSuperScan('x');
 			}
 			else if (playerIndex != 0 && canFire == true){
@@ -57,7 +57,7 @@ public class PlayerController : GameEntity {
 		
 		if (Input.GetButtonDown("Y_" + (playerIndex + 1)))
 		{
-			if (hasSuper == true && playerIndex != 1 && canFire == true && (Input.GetButton("RB_ " + (playerIndex + 1)) || Input.GetButton("LB_ " + (playerIndex + 1)))){
+			if (hasSuper == true && playerIndex != 1 && canFire == true && (Input.GetButton("RB_" + (playerIndex + 1)) || Input.GetButton("LB_" + (playerIndex + 1)))){
 				SetSuperScan('y');
 			}
 			else if (playerIndex != 1 && canFire == true){
@@ -67,7 +67,7 @@ public class PlayerController : GameEntity {
 		
 		if (Input.GetButtonDown("B_" + (playerIndex + 1)))
 		{
-			if (hasSuper == true && playerIndex != 2 && canFire == true && (Input.GetButton("RB_ " + (playerIndex + 1)) || Input.GetButton("LB_ " + (playerIndex + 1)))){
+			if (hasSuper == true && playerIndex != 2 && canFire == true && (Input.GetButton("RB_" + (playerIndex + 1)) || Input.GetButton("LB_" + (playerIndex + 1)))){
 				SetSuperScan('b');
 			}
 			else if (playerIndex != 2 && canFire == true){
@@ -77,7 +77,7 @@ public class PlayerController : GameEntity {
 		
 		if (Input.GetButtonDown("A_" + (playerIndex + 1)))
 		{
-			if (hasSuper == true && playerIndex != 3 && canFire == true && (Input.GetButton("RB_ " + (playerIndex + 1)) || Input.GetButton("LB_ " + (playerIndex + 1)))){
+			if (hasSuper == true && playerIndex != 3 && canFire == true && (Input.GetButton("RB_" + (playerIndex + 1)) || Input.GetButton("LB_" + (playerIndex + 1)))){
 				SetSuperScan('a');
 			}
 			else if (playerIndex != 3 && canFire == true){

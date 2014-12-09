@@ -38,13 +38,14 @@ public class AIController : GameEntity {
     {
 		if(collision.gameObject.layer != 0){ //If collision isn't with default/world
 			ScanController scan = collision.gameObject.GetComponent<ScanController>();
+			
+			FixedValues.enemyNum--;
 
 			//Here is where the "if(!superscan) goes
 			if(!scan.superScan)
 			{
 				FixedValues.playerScores[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
 				FixedValues.superScanVals[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
-				FixedValues.enemyNum--;
 				AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
 				Destroy(gameObject);
 				Destroy(collision.gameObject);
@@ -53,7 +54,6 @@ public class AIController : GameEntity {
 			{
 				FixedValues.playerScores[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
 				FixedValues.superScanVals[collision.gameObject.GetComponent<ScanController>().myPlayer]++;
-				FixedValues.enemyNum--;
 				AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
 				Destroy(gameObject);
 			}

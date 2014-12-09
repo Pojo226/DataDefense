@@ -18,7 +18,6 @@ public class ScanController : GameEntity {
 	// Use this for initialization
 	protected void Start(){
         base.Start();
-		superScan = false;
 	}
 	
 	// Update is called once per frame
@@ -35,7 +34,7 @@ public class ScanController : GameEntity {
     public void SetTarget(int playerIndex){
         // Initialize the FixedGO. Also, set up a time limit for the scan since we don't have collision detection yet
         fixedGO = GameObject.Find("Fixed Values").GetComponent<FixedValues>();
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, 2.0f);
 
         // We can use GameObject.Find because we are not doing this every frame.
 		targetTransform = fixedGO.players[playerIndex].transform;

@@ -32,7 +32,8 @@ public class AISpawner : MonoBehaviour {
                 ((GameObject)GameObject.Instantiate(enemies[i].gameObject, transform.position, Quaternion.identity)).transform.parent = transform;
 
 				//add to enemyNum if enemy is on screen
-				if( !spawnWaves[i].Equals(FixedValues.Enemy_Types.Data))
+				//if( !spawnWaves[i].Equals(FixedValues.Enemy_Types.Data))
+				if(i != (int)FixedValues.Enemy_Types.Data)
 				{
 					FixedValues.enemyNum++;
 				}
@@ -52,7 +53,7 @@ public class AISpawner : MonoBehaviour {
 		}
 
 		if(!enemyType.Equals(FixedValues.Enemy_Types.Data)){
-			//FixedValues.enemyNum += numToSpawn;
+			FixedValues.enemyNum += numToSpawn;
 		}
 	}
 }
