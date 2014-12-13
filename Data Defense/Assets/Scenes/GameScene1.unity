@@ -127,7 +127,7 @@ MonoBehaviour:
   canFire: 0
   hasSuper: 0
   playerIndex: 0
-  lockdownPrefab: {fileID: 0}
+  lockdownPrefab: {fileID: 11400000, guid: d5f183efebfe51f448ae72e239f43f68, type: 2}
   lockdown: {fileID: 0}
   canLock: 0
 --- !u!23 &3398103
@@ -244,6 +244,11 @@ Prefab:
       propertyPath: scanPrefab
       value: 
       objectReference: {fileID: 11400000, guid: 5f4213d205e428d4884b7a4a0ac2a5f0,
+        type: 2}
+    - target: {fileID: 11400000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
+      propertyPath: lockdownPrefab
+      value: 
+      objectReference: {fileID: 11400000, guid: d5f183efebfe51f448ae72e239f43f68,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
@@ -461,7 +466,7 @@ MonoBehaviour:
   canFire: 0
   hasSuper: 0
   playerIndex: 1
-  lockdownPrefab: {fileID: 0}
+  lockdownPrefab: {fileID: 11400000, guid: d5f183efebfe51f448ae72e239f43f68, type: 2}
   lockdown: {fileID: 0}
   canLock: 0
 --- !u!23 &452649943
@@ -627,7 +632,7 @@ MonoBehaviour:
   canFire: 0
   hasSuper: 0
   playerIndex: 3
-  lockdownPrefab: {fileID: 0}
+  lockdownPrefab: {fileID: 11400000, guid: d5f183efebfe51f448ae72e239f43f68, type: 2}
   lockdown: {fileID: 0}
   canLock: 0
 --- !u!23 &529858396
@@ -885,7 +890,7 @@ MonoBehaviour:
   canFire: 0
   hasSuper: 0
   playerIndex: 2
-  lockdownPrefab: {fileID: 0}
+  lockdownPrefab: {fileID: 11400000, guid: d5f183efebfe51f448ae72e239f43f68, type: 2}
   lockdown: {fileID: 0}
   canLock: 0
 --- !u!23 &713871484
@@ -975,7 +980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac154c9a6649435f98025241532a51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 3
+  playerIndex: 1
 --- !u!114 &763021626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1660,7 +1665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac154c9a6649435f98025241532a51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 2
+  playerIndex: 3
 --- !u!114 &1498991400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1814,7 +1819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac154c9a6649435f98025241532a51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 1
+  playerIndex: 2
 --- !u!114 &1735801538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2132,6 +2137,11 @@ Prefab:
       propertyPath: playerIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
+      propertyPath: lockdownPrefab
+      value: 
+      objectReference: {fileID: 11400000, guid: d5f183efebfe51f448ae72e239f43f68,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
   m_RootGameObject: {fileID: 3398100}
@@ -2271,7 +2281,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -2354,6 +2363,11 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 5f4213d205e428d4884b7a4a0ac2a5f0,
         type: 2}
+    - target: {fileID: 11400000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
+      propertyPath: lockdownPrefab
+      value: 
+      objectReference: {fileID: 11400000, guid: d5f183efebfe51f448ae72e239f43f68,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
   m_RootGameObject: {fileID: 529858392}
@@ -2418,6 +2432,11 @@ Prefab:
       propertyPath: scanPrefab
       value: 
       objectReference: {fileID: 11400000, guid: 5f4213d205e428d4884b7a4a0ac2a5f0,
+        type: 2}
+    - target: {fileID: 11400000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
+      propertyPath: lockdownPrefab
+      value: 
+      objectReference: {fileID: 11400000, guid: d5f183efebfe51f448ae72e239f43f68,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b8203c39b4e76b4ca83f28e53611a66, type: 2}
