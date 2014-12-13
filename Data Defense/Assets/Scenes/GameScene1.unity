@@ -1101,6 +1101,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1009287786}
   - 114: {fileID: 1009287787}
+  - 114: {fileID: 1009287788}
   m_Layer: 0
   m_Name: AI Container
   m_TagString: Untagged
@@ -1135,6 +1136,25 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c05bd1618c344314a9b11d37dfefe588, type: 2}
   - {fileID: 11400000, guid: 4a32d056b5698ff4d809c82dac49b7bb, type: 2}
   - {fileID: 11400000, guid: b04d806e9d826d048b3b5f3dda50436f, type: 2}
+--- !u!114 &1009287788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1009287785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f887a83f6295c44c786c5c5e15222c7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VirusMaterial: {fileID: 2100000, guid: 1b9117dd005e9514f8ae3a6dcbeae00d, type: 2}
+  VirusHigh:
+    serializedVersion: 2
+    rgba: 255
+  VirusLow:
+    serializedVersion: 2
+    rgba: 126
+  VirusSpeed: 1
 --- !u!1 &1196254339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,7 +1277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: .600000024, b: 0, a: 1}
+  m_Color: {r: .589655161, g: .353793114, b: 0, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2474a823a9a0a457cba6f06128b16663, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
