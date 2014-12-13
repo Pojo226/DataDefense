@@ -17,7 +17,7 @@ public class LockdownController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        transform.position = new Vector3(fixedGO.players[myPlayer].transform.position.x, transform.position.y, fixedGO.players[myPlayer].transform.position.z);
 	}
 
     void OnDestroy()

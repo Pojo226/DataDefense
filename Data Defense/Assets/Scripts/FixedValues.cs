@@ -46,4 +46,5 @@ public class FixedValues : MonoBehaviour {
     public const int Scans_Layer = 10;
     public const int NeutralData_Layer = 11;
     public const int CorruptedData_Layer = 12;
+    public const int Lockdown_Layer = 13;
 }
