@@ -69,6 +69,7 @@ public class AIController : GameEntity {
 		Vector3 collisionDir = transform.position - collision.contacts[0].point;
 		RaycastHit hit;
 		if(Physics.Raycast(transform.position, collision.contacts[0].point - transform.position, out hit, Mathf.Infinity, 1 << 0)){
+			if(hit.normal == Vector3.up) return;
 			collisionDir = hit.normal;
 		}
 
