@@ -31,6 +31,13 @@ public class Data : AIController {
                 this.GetComponent<MeshRenderer>().material.color = Color.red;
                 corrupted = true;
                 break;
+            case FixedValues.Lockdown_Layer:
+                LockdownController lockdown = collision.gameObject.GetComponent<LockdownController>();
+                int scoreAmtLockdown = corrupted ? 1 : 3;
+                FixedValues.playerScores[lockdown.myPlayer] += scoreAmtLockdown;
+                FixedValues.superScanVals[lockdown.myPlayer] += scoreAmtLockdown;
+                Destroy(gameObject);
+                break;
         }
     }
 }
