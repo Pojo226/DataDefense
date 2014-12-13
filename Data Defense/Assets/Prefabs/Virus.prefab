@@ -29,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10.6300001, y: .579999983, z: -2.3900001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,7 +86,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1571722, y: 1.45362568, z: 1.1571722}
+  m_Size: {x: 1.5, y: 1.45362568, z: 1.5}
   m_Center: {x: 0, y: .148226768, z: 2.98023224e-08}
 --- !u!95 &9500000
 Animator:
@@ -115,6 +115,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 15
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: .998277664
+      inSlope: .296139151
+      outSlope: 2.89058948
+      tangentMode: 1
+    - time: 1
+      value: .998421192
+      inSlope: -2.74922824
+      outSlope: -2.74922824
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!143 &14300000
 CharacterController:
   m_ObjectHideFlags: 1
@@ -128,7 +143,7 @@ CharacterController:
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: .25, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
