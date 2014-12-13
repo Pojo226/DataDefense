@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Virus : AIController {
 
-	private static float Spawn_Time_Min = 2;
-	private static float Spawn_Time_Max = 5;
+	private static float Spawn_Time_Min = 3;
+	private static float Spawn_Time_Max = 8;
 
 	private float spawnTime = 0;
 
@@ -23,6 +23,5 @@ public class Virus : AIController {
 
 	private void CalculateSpawnTime(){
 		spawnTime = Time.time + Random.Range(Spawn_Time_Min, Spawn_Time_Max);
-		Debug.Log(spawnTime - Time.time);
 	}
 }
