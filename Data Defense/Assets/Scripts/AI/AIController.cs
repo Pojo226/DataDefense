@@ -57,31 +57,26 @@ public class AIController : GameEntity {
         }
     }
 
-	protected virtual void OnCollisionStay(Collision collision){
-		movement += Vector3.Normalize(collision.contacts[0].point - transform.position);
-	}
-
     // Change the direction
     protected void UpdateRandomMovementVector()
     {
-        randomVector = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
+        randomVector = Vector3.Normalize(new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f)));
         travelEndTime = Time.time + Random.Range(minTravelTime, maxTravelTime);
     }
 
     // Change the direction with collision in mind
-    protected void UpdateRandomMovementVector(Collision collision)
-    {
-		Vector3 collisionDir = collision.contacts[0].point - transform.position;
+    protected void UpdateRandomMovementVector(Collision collision){
+		Vector3 collisionDir = transform.position - collision.contacts[0].point;
 		RaycastHit hit;
-		if(Physics.Raycast(transform.position, transform.position - collision.contacts[0].point, out hit, Mathf.Infinity, 1 << 0)){
+		if(Physics.Raycast(transform.position, collision.contacts[0].point - transform.position, out hit, Mathf.Infinity, 1 << 0)){
 			collisionDir = hit.normal;
 		}
 
-        do
-        {
+        do{
             randomVector = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
-        }while(Vector3.Angle(randomVector, collisionDir) < 80);
+        }while(Vector3.Angle(randomVector, collisionDir) > 80);
         
+		randomVector = Vector3.Normalize(randomVector);
         travelEndTime = Time.time + Random.Range(minTravelTime, maxTravelTime);
     }
 }
