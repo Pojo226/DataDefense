@@ -26,6 +26,10 @@ public class ScanController : GameEntity {
         // Set the movement towards the target player using subtraction and vector normalization
         movement = new Vector3(targetTransform.position.x - transform.position.x, 0, targetTransform.position.z - transform.position.z);
         movement = Vector3.Normalize(movement);
+
+		if(superScan){
+			movement *= 5;
+		}
         
         base.Update();
         
