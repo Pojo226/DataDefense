@@ -11,6 +11,6 @@ public class CameraSize : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	    // Set the main camera field of view to 80 degrees
-		Camera.main.fieldOfView = 80;
+		Camera.main.fieldOfView = 85;
 	}
 }

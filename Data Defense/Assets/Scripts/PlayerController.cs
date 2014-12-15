@@ -28,96 +28,76 @@ public class PlayerController : GameEntity {
 	// Update is called once per frame
 	protected void Update(){
 
-		//check if the player can use a super scan
-		if (FixedValues.superScanVals[playerIndex] >= FixedValues.superScanCost) {
-			hasSuper = true;
-		}
-		else {
-			hasSuper = false;
-		}
+		//can only move them in the game
+		if (Application.loadedLevelName == "GameScene1") {
 
-        // Movement controls
-        float axis = Input.GetAxis("L_XAxis_" + (playerIndex + 1));
-        if(axis != 0) {
-            movement.x = axis;
-        }
+						//check if the player can use a super scan
+						if (FixedValues.superScanVals [playerIndex] >= FixedValues.superScanCost) {
+								hasSuper = true;
+						} else {
+								hasSuper = false;
+						}
 
-		axis = Input.GetAxis("L_YAxis_" + (playerIndex + 1));
-		if(axis != 0) {
-            movement.z = -axis;
-        }
+						// Movement controls
+						float axis = Input.GetAxis ("L_XAxis_" + (playerIndex + 1));
+						if (axis != 0) {
+								movement.x = axis;
+						}
+
+						axis = Input.GetAxis ("L_YAxis_" + (playerIndex + 1));
+						if (axis != 0) {
+								movement.z = -axis;
+						}
 
         
-        // Call base update method for movement resolution
-        base.Update();
+						// Call base update method for movement resolution
+						base.Update ();
 
-		// Button resolution. Each Buttom will create a scan that targets a respective player
-		if (Input.GetButtonDown("X_" + (playerIndex + 1)))
-		{
-			if (hasSuper == true && playerIndex != 0 && canFire == true  && canLock == true && (Input.GetButton("RB_" + (playerIndex + 1)) || Input.GetButton("LB_" + (playerIndex + 1)))){
-				SetSuperScan('x');
-			}
-            else if (playerIndex != 0 && canFire == true && canLock == true)
-            {
-				SetScan('x');
-			}
-            else if (playerIndex == 0 && canLock == true)
-            {
-                // If you're the pressing your own color, Lockdown!
-                SetLock();
-            }
-		}
+						// Button resolution. Each Buttom will create a scan that targets a respective player
+						if (Input.GetButtonDown ("X_" + (playerIndex + 1))) {
+								if (hasSuper == true && playerIndex != 0 && canFire == true && canLock == true && (Input.GetButton ("RB_" + (playerIndex + 1)) || Input.GetButton ("LB_" + (playerIndex + 1)))) {
+										SetSuperScan ('x');
+								} else if (playerIndex != 0 && canFire == true && canLock == true) {
+										SetScan ('x');
+								} else if (playerIndex == 0 && canLock == true) {
+										// If you're the pressing your own color, Lockdown!
+										SetLock ();
+								}
+						}
 		
-		if (Input.GetButtonDown("Y_" + (playerIndex + 1)))
-		{
-            if (hasSuper == true && playerIndex != 1 && canFire == true && canLock == true && (Input.GetButton("RB_" + (playerIndex + 1)) || Input.GetButton("LB_" + (playerIndex + 1))))
-            {
-				SetSuperScan('y');
-			}
-            else if (playerIndex != 1 && canFire == true && canLock == true)
-            {
-				SetScan('y');
-			}
-            else if (playerIndex == 1 && canLock == true)
-            {
-                // If you're the pressing your own color, Lockdown!
-                SetLock();
-            }
-		}
+						if (Input.GetButtonDown ("Y_" + (playerIndex + 1))) {
+								if (hasSuper == true && playerIndex != 1 && canFire == true && canLock == true && (Input.GetButton ("RB_" + (playerIndex + 1)) || Input.GetButton ("LB_" + (playerIndex + 1)))) {
+										SetSuperScan ('y');
+								} else if (playerIndex != 1 && canFire == true && canLock == true) {
+										SetScan ('y');
+								} else if (playerIndex == 1 && canLock == true) {
+										// If you're the pressing your own color, Lockdown!
+										SetLock ();
+								}
+						}
 		
-		if (Input.GetButtonDown("B_" + (playerIndex + 1)))
-		{
-            if (hasSuper == true && playerIndex != 2 && canFire == true && canLock == true && (Input.GetButton("RB_" + (playerIndex + 1)) || Input.GetButton("LB_" + (playerIndex + 1))))
-            {
-				SetSuperScan('b');
-			}
-            else if (playerIndex != 2 && canFire == true && canLock == true)
-            {
-				SetScan('b');
-			}
-            else if (playerIndex == 2 && canLock == true)
-            {
-                // If you're the pressing your own color, Lockdown!
-                SetLock();
-            }
-		}
+						if (Input.GetButtonDown ("B_" + (playerIndex + 1))) {
+								if (hasSuper == true && playerIndex != 2 && canFire == true && canLock == true && (Input.GetButton ("RB_" + (playerIndex + 1)) || Input.GetButton ("LB_" + (playerIndex + 1)))) {
+										SetSuperScan ('b');
+								} else if (playerIndex != 2 && canFire == true && canLock == true) {
+										SetScan ('b');
+								} else if (playerIndex == 2 && canLock == true) {
+										// If you're the pressing your own color, Lockdown!
+										SetLock ();
+								}
+						}
 		
-		if (Input.GetButtonDown("A_" + (playerIndex + 1)))
-		{
-            if (hasSuper == true && playerIndex != 3 && canFire == true && canLock == true && (Input.GetButton("RB_" + (playerIndex + 1)) || Input.GetButton("LB_" + (playerIndex + 1))))
-            {
-				SetSuperScan('a');
-			}
-            else if (playerIndex != 3 && canFire == true && canLock == true)
-            {
-				SetScan('a');
-			}
-            else if (playerIndex == 3 && canLock == true)
-            {
-                // If you're the pressing your own color, Lockdown!
-                SetLock();
-            }
-		}
+						if (Input.GetButtonDown ("A_" + (playerIndex + 1))) {
+								if (hasSuper == true && playerIndex != 3 && canFire == true && canLock == true && (Input.GetButton ("RB_" + (playerIndex + 1)) || Input.GetButton ("LB_" + (playerIndex + 1)))) {
+										SetSuperScan ('a');
+								} else if (playerIndex != 3 && canFire == true && canLock == true) {
+										SetScan ('a');
+								} else if (playerIndex == 3 && canLock == true) {
+										// If you're the pressing your own color, Lockdown!
+										SetLock ();
+								}
+						}
+				}
 	}
 
     void SetScan(char buttonDown)

@@ -37,7 +37,7 @@ public class FixedValues : MonoBehaviour {
 	public static int enemyNum = 0;
 
 	//Wave number
-	public static int waveNum;
+	public static int waveNum = 0;
 
 
 

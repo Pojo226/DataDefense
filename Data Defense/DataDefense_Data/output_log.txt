@@ -5,78 +5,28 @@ Direct3D:
     Renderer: NVIDIA GeForce GTS 360M (ID=0xcb1)
     Vendor:   NVIDIA
     VRAM:     1004 MB
-Initialize engine version: 4.6.0b20 (a3ecf55f1347)
-GfxDevice: creating device client; threaded=1
-Direct3D:
-    Version:  Direct3D 11.0 [level 10.1]
-    Renderer: NVIDIA GeForce GTS 360M (ID=0xcb1)
-    Vendor:   NVIDIA
-    VRAM:     1004 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\UnityEngine.dll into Unity Child Domain
-Begin MonoManager ReloadAssembly
-Platform assembly: F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.102 seconds
-Platform assembly: F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.099 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Platform assembly: F:\Production Studio\12-15-14\Data Defense\DataDefense_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\Production Studio\12-15-14\Data Defense\DataDefense_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\Production Studio\12-15-14\Data Defense\DataDefense_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\Production Studio\12-15-14\Data Defense\DataDefense_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\Production Studio\12-15-14\Data Defense\DataDefense_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\Production Studio\12-15-14\Data Defense\DataDefense_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.310 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-<RI> Initializing input.
-<RI> Input initialized.
-Platform assembly: F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: F:\Production Studio\11-4-14\Data Defense\DataDefense_Data\Managed\System.dll (this message is harmless)
-Hit by: 9
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+Platform assembly: F:\Production Studio\12-15-14\Data Defense\DataDefense_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\Production Studio\12-15-14\Data Defense\DataDefense_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 11.037885 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Hit by: 9
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 290.
+Total: 7.780540 ms (FindLiveObjects: 0.052610 ms CreateObjectMapping: 0.036570 ms MarkObjects: 0.716012 ms  DeleteObjects: 0.098804 ms)
 
-Hit by: 9
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+UnloadTime: 2.674781 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Hit by: 9
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Hit by: 9
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Hit by: 9
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Hit by: 9
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Hit by: 9
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Hit by: 9
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Hit by: 9
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Hit by: 9
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 324.
+Total: 4.104881 ms (FindLiveObjects: 0.038495 ms CreateObjectMapping: 0.039136 ms MarkObjects: 0.606300 ms  DeleteObjects: 0.009623 ms)
 
