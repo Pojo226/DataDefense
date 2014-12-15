@@ -11,7 +11,7 @@ public class LockdownController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Destroy(gameObject, 5.0f);
+        Destroy(gameObject, 2.0f);
         fixedGO = GameObject.Find("Fixed Values").GetComponent<FixedValues>();
 	}
 	

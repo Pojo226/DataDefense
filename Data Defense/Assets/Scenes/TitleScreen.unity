@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 3
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -190,7 +190,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 89590273}
-  m_HideIfInvisible: 0
 --- !u!1 &295053589
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +256,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 295053589}
-  m_HideIfInvisible: 0
 --- !u!1 &702395090
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 3
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -517,7 +515,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1114030765}
-  m_HideIfInvisible: 0
 --- !u!1 &1700142342
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,10 +556,10 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
+  m_HorizontalAxis: L_XAxis_1
+  m_VerticalAxis: L_YAxis_1
+  m_SubmitButton: A_1
+  m_CancelButton: B_1
   m_InputActionsPerSecond: 10
   m_AllowActivationOnMobileDevice: 0
 --- !u!114 &1700142345
@@ -578,6 +575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 89590273}
   m_sendNavigationEvents: 1
+  m_DragThreshold: 5
 --- !u!4 &1700142346
 Transform:
   m_ObjectHideFlags: 0
@@ -656,7 +654,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1836501986}
-  m_HideIfInvisible: 0
 --- !u!1 &1852927787
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +703,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -726,6 +722,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!1 &1943775604
@@ -783,7 +780,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1943775604}
-  m_HideIfInvisible: 0
 --- !u!224 &1943775607
 RectTransform:
   m_ObjectHideFlags: 0
@@ -852,7 +848,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1974469287}
-  m_HideIfInvisible: 0
 --- !u!224 &1974469290
 RectTransform:
   m_ObjectHideFlags: 0

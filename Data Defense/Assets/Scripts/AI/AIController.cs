@@ -30,6 +30,7 @@ public class AIController : GameEntity {
         }
 
         movement = randomVector;
+        movement *= 1.1f;
         base.Update();
 	}
 
@@ -45,7 +46,7 @@ public class AIController : GameEntity {
 
                 FixedValues.playerScores[scan.myPlayer]++;
                 FixedValues.superScanVals[scan.myPlayer]++;
-                FixedValues.enemyNum--;
+                
                 AISpawner.SpawnImmediately(FixedValues.Enemy_Types.Data, 3, transform);
                 Destroy(gameObject);
 
@@ -79,5 +80,13 @@ public class AIController : GameEntity {
         
 		randomVector = Vector3.Normalize(randomVector);
         travelEndTime = Time.time + Random.Range(minTravelTime, maxTravelTime);
+    }
+
+    void OnDestroy()
+    {
+        if(!(this is Data))
+        {
+            FixedValues.enemyNum--;
+        }
     }
 }

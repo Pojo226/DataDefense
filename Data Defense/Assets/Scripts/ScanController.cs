@@ -25,20 +25,33 @@ public class ScanController : GameEntity {
 
         // Set the movement towards the target player using subtraction and vector normalization
         movement = new Vector3(targetTransform.position.x - transform.position.x, 0, targetTransform.position.z - transform.position.z);
+
+        if (movement.magnitude < .5f)
+        {
+            Destroy(gameObject);
+        }
+
         movement = Vector3.Normalize(movement);
+
+        
 
 		if(superScan){
 			movement *= 5;
-		}
+		}else
+        {
+            movement *= 1.75f;
+        }
         
         base.Update();
         
+        
+
 	}
 
     public void SetTarget(int playerIndex){
         // Initialize the FixedGO. Also, set up a time limit for the scan since we don't have collision detection yet
         fixedGO = GameObject.Find("Fixed Values").GetComponent<FixedValues>();
-        Destroy(gameObject, 2.0f);
+        //Destroy(gameObject, 2.0f);
 
         // We can use GameObject.Find because we are not doing this every frame.
 		targetTransform = fixedGO.players[playerIndex].transform;

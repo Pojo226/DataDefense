@@ -46,7 +46,7 @@ public class PlayerController : GameEntity {
 
 						axis = Input.GetAxis ("L_YAxis_" + (playerIndex + 1));
 						if (axis != 0) {
-								movement.z = -axis;
+								movement.z = axis;
 						}
 
         
@@ -103,7 +103,7 @@ public class PlayerController : GameEntity {
     void SetScan(char buttonDown)
     {
         // Create the scan
-        scan = Instantiate(scanPrefab, transform.position, Quaternion.identity) as ScanController;
+        scan = Instantiate(scanPrefab, transform.position + new Vector3(0.0f, 0.5f, 0.0f), Quaternion.identity) as ScanController;
 		scan.GetComponent<MeshRenderer>().material.color = GetComponent<MeshRenderer>().sharedMaterial.color;
 
         // Can't scan twice
@@ -136,7 +136,8 @@ public class PlayerController : GameEntity {
 	void SetSuperScan(char buttonDown)
 	{
 		// Create the scan
-		scan = Instantiate(scanPrefab, transform.position, Quaternion.identity) as ScanController;
+		scan = Instantiate(scanPrefab, transform.position + new Vector3(0.0f, 0.5f, 0.0f), Quaternion.identity) as ScanController;
+        scan.GetComponent<MeshRenderer>().material.color = GetComponent<MeshRenderer>().sharedMaterial.color;
 		
 		// Can't scan twice
 		canFire = false;
@@ -149,27 +150,23 @@ public class PlayerController : GameEntity {
 		{
 		case 'x':
 			scan.SetTarget(0);
-			scan.myPlayer = playerIndex;
-			scan.superScan = true;
 			break;
 		case 'y':
 			scan.SetTarget(1);
-			scan.myPlayer = playerIndex;
-			scan.superScan = true;
 			break;
 		case 'b':
 			scan.SetTarget(2);
-			scan.myPlayer = playerIndex;
-			scan.superScan = true;
 			break;
 		case 'a':
 			scan.SetTarget(3);
-			scan.myPlayer = playerIndex;
-			scan.superScan = true;
 			break;
 		default:
 			break;
 		}
+
+        scan.myPlayer = playerIndex;
+        scan.superScan = true;
+
 	}
     void SetLock()
     {

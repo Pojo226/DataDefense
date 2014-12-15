@@ -25,6 +25,7 @@ public class AISpawner : MonoBehaviour {
 
     // Spawn the enemies into the game
     public void SpawnWave(){
+        FixedValues.enemyNum = 0;
         // For every enemy type
         for(int i = 0; i < spawnWaves.Length; i++){
             // Create the number of enemies specified in the array

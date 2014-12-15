@@ -14,7 +14,7 @@ public class FixedValues : MonoBehaviour {
     public enum Enemy_Types { Data, Virus, Program }
 
 	//Conatant for round times
-	public static float Max_Time = 30.00f;
+	public static float Max_Time = 15.00f;
 
 	//var for current time left
 	public static float gameTime;
